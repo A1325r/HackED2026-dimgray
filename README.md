@@ -1,5 +1,5 @@
 # HackED 2026 - dimgray
 
-# Expense Tracker
+# Project Name
 ## Description
 project description here
