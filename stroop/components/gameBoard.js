@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GameButton from "../gamebutton";
+import GameButton from "./gamebutton";
 import { useRouter } from "next/router";
 export default function GameBoard(props) {
 const router = useRouter();
@@ -30,6 +30,8 @@ const checkColor = (event) => {
         //setGameColors(props.colors);
         //console.log(tempcolor);
         setTargetColor(gameColors[getRandomNumber(5)]);
+    } else {
+        router.push("../game-over")
     }
 }
 
