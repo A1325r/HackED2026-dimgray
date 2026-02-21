@@ -2,7 +2,7 @@ export default function GameButton(props) {
 
 
 return (
-    <button>{props.color}</button>
+    <button style={{color: props.color}}>{props.color}</button>
 )
 }
 
