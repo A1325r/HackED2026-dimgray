@@ -1,7 +1,8 @@
 import { useState } from "react";
-import GameButton from "./gamebutton";
-
+import GameButton from "../gamebutton";
+import { useRouter } from "next/router";
 export default function GameBoard(props) {
+const router = useRouter();
 const [gameState, setGameState] = useState();
 //const [gameColors, setGameColors] = useState([]);
 const [targetColor, setTargetColor] = useState('red');
