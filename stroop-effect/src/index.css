@@ -26,8 +26,8 @@ code {
 button {
   font-family: 'Joystix';
   padding: 10px 20px;
-  color: cyan;
-  outline: 2px solid cyan;
+  color: rgb(121, 158, 194);
+  outline: 2px solid rgb(121, 158, 194);
   background-color: black;
   font-size: 50px;
   margin: 15px;
@@ -38,8 +38,12 @@ button {
 
 button:hover {
   box-shadow: 0 0 30px cyan;
-  color: rgb(121, 158, 194);
+  color: cyan;
 }
+
+/* 
+rgb(121, 158, 194)
+ */
 
 .title {
   color: yellow;
@@ -49,7 +53,7 @@ button:hover {
   font-size: 70px;
   color: cyan;
   margin-bottom: 35px;
-  animation: arcade-blink 1s linear infinite;
+  animation: arcade-blink 2.5s ease-in-out infinite;
 }
 
 @keyframes arcade-blink {
