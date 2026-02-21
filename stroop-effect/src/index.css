@@ -23,7 +23,7 @@ code {
 }
 
 
-button {
+.modeButtons {
   font-family: 'Joystix';
   padding: 10px 20px;
   color: rgb(121, 158, 194);
@@ -37,7 +37,7 @@ button {
 
 }
 
-button:hover {
+.modeButtons:hover {
   box-shadow: 0 0 30px cyan;
   color: cyan;
   border: 2px solid cyan;
@@ -57,6 +57,19 @@ button:hover {
 
 p {
   color: white;
+}
+
+.startButton {
+  font-family: 'Joystix';
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.startButton:hover {
+  font-family: 'Joystix';
+  color: black;
+  background-color: white;
 }
 
 @keyframes arcade-blink {

@@ -28,10 +28,13 @@ function TimerButton() {
 
   return (
     <div>
-      <button class name="timerButton" onClick={handleTimerClick}>Time Trial</button>
-      {isTimerActive === true && <p>How many colors can you match in
-        67 seconds?  <br /> For every match you get
-        wrong, <br /> the timer reduces 6-7 seconds!</p>}
+      <button class="modeButtons" name="timerButton" onClick={handleTimerClick}>Time Trial</button>
+      {isTimerActive === true && <div>
+        <p>How many colors can you match in
+          67 seconds?  <br /> For every match you get
+          wrong, <br /> the timer reduces 6-7 seconds!</p>
+          <button class="startButton">Start Time Trial</button>
+      </div>}
     </div>
   );
 }
@@ -47,8 +50,12 @@ function CountdownButton() {
 
   return (
     <div>
-      <button class name="countdownButton" onClick={handleCountdownClick}>Endless Mode</button>
-      {isCountdownActive === true && <p>Play until you get the color wrong! <br/> The questions get progressively harder <br/> and the question timer gets shorter as you play.</p>}
+      <button class="modeButtons" name="countdownButton" onClick={handleCountdownClick}>Survival Mode</button>
+      {isCountdownActive === true && <div>
+        <p>Play until you get the color wrong! <br/> The questions get progressively harder <br/> and the question timer gets shorter as you play.</p>
+        <br/>
+        <button class="startButton">Start Survival Mode</button>
+      </div>}
     </div>
   );
 }
