@@ -5,3 +5,5 @@ export default function TimeTrial() {
         </div>
     );
 }
+
+TimeTrial();
