@@ -1,8 +1,13 @@
-export default function GameButton(props) {
+import react from 'react';
 
+export default function GameButton({click, color, text}) {
+
+    function handleClick(event) {
+        click(event);
+    }
 
 return (
-    <button style={{color: props.color, backgroundColor: props.backgroundColor, borderColor: props.borderColor}}>{props.text}</button>
+    <button style={{color: color}} onClick={handleClick}>{text}</button>
 )
 }
 
