@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
+import Points from './Points';
 
-export default function ProgressIndicator({ pointCount }) {
+export default function ProgressIndicator() {
     const [indication, setIndication] = useState(0);
 
     useEffect(() => {
-        if (pointCount % 6 === 0) {
-            setIndication(prev => prev + 1)
+        if (Points.pointCount % 6 === 0) {
+            setIndication(i => i + 1)
         }
-    }, [indication, pointCount])
+    }, [indication])
 
     const boxes = [];
 
@@ -22,6 +23,6 @@ export default function ProgressIndicator({ pointCount }) {
     }
 
     return (
-       {boxes}
+        { boxes }
     )
 }
