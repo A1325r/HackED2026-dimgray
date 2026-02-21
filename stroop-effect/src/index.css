@@ -34,6 +34,7 @@ button {
   border-radius: 20px;
   padding: 10px;
   display: block;
+
 }
 
 button:hover {
@@ -46,6 +47,7 @@ button:hover {
   color: yellow;
   font-size: 40px;
 }
+
 .homeScreenButtons h1 {
   font-size: 70px;
   color: cyan;
@@ -53,7 +55,18 @@ button:hover {
   animation: arcade-blink 2.5s ease-in-out infinite;
 }
 
+p {
+  color: white;
+}
+
 @keyframes arcade-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
