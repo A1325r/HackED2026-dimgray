@@ -53,7 +53,6 @@ function CountdownButton() {
       <button class="modeButtons" name="countdownButton" onClick={handleCountdownClick}>Survival Mode</button>
       {isCountdownActive === true && <div>
         <p>Play until you get the color wrong! <br/> The questions get progressively harder <br/> and the question timer gets shorter as you play.</p>
-        <br/>
         <button class="startButton">Start Survival Mode</button>
       </div>}
     </div>
