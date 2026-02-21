@@ -38,10 +38,21 @@ button {
 
 button:hover {
   box-shadow: 0 0 30px cyan;
+  color: rgb(121, 158, 194);
 }
 
+.title {
+  color: yellow;
+  font-size: 40px;
+}
 .homeScreenButtons h1 {
   font-size: 70px;
   color: cyan;
   margin-bottom: 35px;
+  animation: arcade-blink 1s linear infinite;
+}
+
+@keyframes arcade-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

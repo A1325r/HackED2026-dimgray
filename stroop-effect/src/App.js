@@ -5,8 +5,9 @@ import GameButton from './gamebutton';
 function App() {
   return (
     <div className="App">
+      <h1 className='title'>str00p.io</h1>
       <div className='homeScreenButtons'>
-        <h1>Select Game Mode</h1>
+        <div className='typing-container'><h1>Select Game Mode</h1></div>
         <TimerButton />
         <CountdownButton />
         <GameButton color="blue"/>
