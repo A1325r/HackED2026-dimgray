@@ -2,10 +2,12 @@ import './App.css';
 import './components/gamebutton'
 import GameButton from './components/gamebutton';
 import { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <div className='homeScreenButtons'>
         <div className='typing-container'><h1>Select Game Mode</h1></div>
         <TimerButton />
