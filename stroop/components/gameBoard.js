@@ -1,11 +1,13 @@
 import { useState } from "react";
 import GameButton from "./gamebutton";
 import { useRouter } from "next/router";
+import ColorText from "./ColorText";
 export default function GameBoard(props) {
 const router = useRouter();
 const [gameState, setGameState] = useState();
 //const [gameColors, setGameColors] = useState([]);
 const [targetColor, setTargetColor] = useState('red');
+const [targetText, setTargetText] = useState('blue');
 const [score, setScore] = useState(0);
 
 const gameColors = [
@@ -29,16 +31,25 @@ const checkColor = (event) => {
         //let tempcolor = gameColors.at(number);
         //setGameColors(props.colors);
         //console.log(tempcolor);
-        setTargetColor(gameColors[getRandomNumber(5)]);
+        rollTarget();
+        
     } else {
         router.push("../game-over")
     }
 }
 
+const rollTarget = () => {
+     setTargetColor(gameColors[getRandomNumber(5)]);
+     setTargetText(gameColors[getRandomNumber(5)]);
+
+     while (targetColor === targetText) {
+        setTargetText(gameColors[getRandomNumber(5)]);
+     }
+}
 
 return ( 
     <div>
-        <p style={{color: targetColor}}>{targetColor}</p>
+        <ColorText textcolor={targetColor} text={targetText}/>
         <p style={{color: targetColor}}>{score}</p>
         {/* <GameButton onClick={handleClick} color="red" text="blue"></GameButton> */}
     <ul>

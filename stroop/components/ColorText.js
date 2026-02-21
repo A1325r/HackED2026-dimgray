@@ -1,6 +1,6 @@
-export default function ColorText(prop) {
+export default function ColorText({textcolor, text}) {
     return (
-        <p style={{ color: prop.textcolor }}>{prop.text}</p>
+        <p style={{ color: textcolor }}>{text}</p>
     )
 }
 
