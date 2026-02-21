@@ -1,7 +1,7 @@
-export default function Points ({prop, answer}) {
+export default function Points ({actualColour, userAnswer}) {
     let pointCount;
 
-    if(prop.colour === answer) {
+    if(actualColour === userAnswer) {
         pointCount++;
     }
 
