@@ -4,21 +4,23 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='homeScreenButtons'>
+        <TimerButton />
+        <CountdownButton />
+      </div>
     </div>
+  );
+}
+
+function TimerButton() {
+  return (
+    <button class name="timerButton">Timer Button</button>
+  );
+}
+
+function CountdownButton() {
+  return (
+    <button class name="countdownButton">Countdown Button</button>
   );
 }
 
