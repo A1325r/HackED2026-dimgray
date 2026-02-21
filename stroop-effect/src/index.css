@@ -15,6 +15,7 @@ code {
 
 .homeScreenButtons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -27,13 +28,19 @@ button {
   color: cyan;
   outline: 2px solid cyan;
   background-color: black;
-  font-size: xx-large;
+  font-size: 50px;
   margin: 15px;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px;
-  outline:
+  display: block;
 }
 
 button:hover {
-  box-shadow: 0 0 20px cyan;
+  box-shadow: 0 0 30px cyan;
+}
+
+.homeScreenButtons h1 {
+  font-size: 70px;
+  color: cyan;
+  margin-bottom: 35px;
 }

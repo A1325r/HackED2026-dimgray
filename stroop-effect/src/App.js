@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className='homeScreenButtons'>
+        <h1>Select Game Mode</h1>
         <TimerButton />
         <CountdownButton />
       </div>
@@ -14,13 +15,13 @@ function App() {
 
 function TimerButton() {
   return (
-    <button class name="timerButton">Timer Button</button>
+    <button class name="timerButton">Time Trial</button>
   );
 }
 
 function CountdownButton() {
   return (
-    <button class name="countdownButton">Countdown Button</button>
+    <button class name="countdownButton">Endless Mode</button>
   );
 }
 
