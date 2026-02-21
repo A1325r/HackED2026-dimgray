@@ -39,12 +39,12 @@ const checkColor = (event) => {
 }
 
 const rollTarget = () => {
-     setTargetColor(gameColors[getRandomNumber(5)]);
-     setTargetText(gameColors[getRandomNumber(5)]);
+    let tempTarget = getRandomNumber(5);
+    setTargetColor(gameColors[tempTarget]);
+    let tempArray = gameColors;
+    tempArray.splice(tempTarget-1, 1)
 
-     while (targetColor === targetText) {
-        setTargetText(gameColors[getRandomNumber(5)]);
-     }
+    setTargetText(tempArray[getRandomNumber(4)]);
 }
 
 return ( 
