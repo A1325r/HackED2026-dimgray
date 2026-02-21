@@ -1,6 +1,6 @@
 import './App.css';
-import './gamebutton'
-import GameButton from './gamebutton';
+import './components/gamebutton'
+import GameButton from './components/gamebutton';
 import { useState, useEffect } from 'react';
 
 function App() {
