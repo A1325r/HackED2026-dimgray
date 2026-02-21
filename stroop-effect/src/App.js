@@ -10,7 +10,6 @@ function App() {
         <div className='typing-container'><h1>Select Game Mode</h1></div>
         <TimerButton />
         <CountdownButton />
-        <GameButton color="blue"/>
       </div>
     </div>
   );
