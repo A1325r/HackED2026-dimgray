@@ -27,7 +27,7 @@ button {
   font-family: 'Joystix';
   padding: 10px 20px;
   color: rgb(121, 158, 194);
-  outline: 2px solid rgb(121, 158, 194);
+  border: 2px solid rgb(121, 158, 194);
   background-color: black;
   font-size: 50px;
   margin: 15px;
@@ -39,11 +39,8 @@ button {
 button:hover {
   box-shadow: 0 0 30px cyan;
   color: cyan;
+  border: 2px solid cyan;
 }
-
-/* 
-rgb(121, 158, 194)
- */
 
 .title {
   color: yellow;
