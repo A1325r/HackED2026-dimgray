@@ -5,15 +5,34 @@ import GameOverPage from "./game-over";
 import GameTimer from "../components/gameTimer";
 import ProgressTimeBar from "../components/progressTimeBar";
 
-export default function TimeTrial() {
+export default function SurvivalMode() {
     const [gameState, setGameState] = useState(true);
     const [gamesScore, setGameScore] = useState(0);
     const [gameTimer, setGameTimer] = useState(67);
     const { elapsedTime, progress, secondDur, start } = GameTimer(67); // 67 seconds hahahahahahahah
+    const [timeLeft, setTimeLeft] = useState(67); // Timer value
+    const [isActive, setIsActive] = useState(false); // To control the timer
 
-    const handleFail = (score) => {
-        setGameState(false);
-        setGameScore(score);
+    useEffect(() => {
+        let timer;
+
+        if (timeLeft > 0) {
+            timer = setTimeout(() => {
+                setTimeLeft((prevTime) => prevTime - 1);
+            }, 1000);
+
+
+        } else if (timeLeft <= 0) {
+            setGameState(false);
+        }
+
+        return () => clearTimeout(timer); // Cleanup the timer
+
+    }, [timeLeft, isActive]);
+
+
+    const handleFail = () => {
+        setTimeLeft((prevTime) => prevTime - 6)
     }
 
     // starts timer yt
@@ -21,31 +40,20 @@ export default function TimeTrial() {
         start();
     }, []);
 
-    const handlePass = () => {
-        setGameTimer(67);
+    const handlePass = (number) => {
+        setGameScore(number)
     }
 
-    const timerId = setInterval(function() {
-        setGameTimer(gameTimer - 1)
-        if(gameTimer === 0) {
-            setGameState(false);
-            setGameTimer(0)
-        }
-    }, 1000);
 
-    // To stop the timer after, say, 5 seconds:
-    setTimeout(function() {
-        clearInterval(timerId);
-    }, 6000);
     return (
         <div>
             <Navbar />
             {/* shows progerss bar */}
-            <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} duration={secondDur}/>
+            <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {progress >= 100 && <p className="time-up">Time's Up!</p>}
-            <p>This is time trial</p>
+            <p>This is survival mode</p>
             <p>{GameTimer}</p>
-            <p>{gameTimer}</p>
+            <p>{timeLeft}</p>
             {gameState && <GameBoard failGame={handleFail} contGame={handlePass}></GameBoard>}
             {!gameState && <GameOverPage displayScore={gamesScore}></GameOverPage>}
         </div>
