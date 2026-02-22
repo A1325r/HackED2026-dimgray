@@ -46,7 +46,7 @@ const rollTarget = () => {
     let tempTarget = getRandomNumber(5);
     setTargetColor(gameColors[tempTarget]);
     let tempArray = gameColors;
-    tempArray.splice(tempTarget-1, 1)
+    tempArray.splice(tempTarget, 1)
 
     setTargetText(tempArray[getRandomNumber(4)]);
 }

@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import GameBoard from "@/components/gameBoard";
 import { useState } from "react";
 import GameOverPage from "./game-over";
+import ProgressIndicator from "@/components/ProgressIndicator";
 
 export default function SurvivalMode() {
 const [gameState, setGameState] = useState(true);
