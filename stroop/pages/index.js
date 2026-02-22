@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import Link from "next/link";
