@@ -2,9 +2,9 @@ import { useState } from "react";
 import GameButton from "./gamebutton";
 import { useRouter } from "next/router";
 import ColorText from "./ColorText";
-export default function GameBoard(props) {
+export default function GameBoard({failGame}) {
 const router = useRouter();
-const [gameState, setGameState] = useState();
+// const [gameState, setGameState] = useState(gameState);
 //const [gameColors, setGameColors] = useState([]);
 const [targetColor, setTargetColor] = useState('red');
 const [targetText, setTargetText] = useState('blue');
@@ -23,6 +23,10 @@ const getRandomNumber = (max) => {
     return Math.floor(Math.random() * max);
 }
 
+function failure(number) {
+    failGame(number);
+}
+
 const checkColor = (event) => {
     const buttonText = event.target.innerText;
     if(buttonText === targetColor) {
@@ -34,7 +38,7 @@ const checkColor = (event) => {
         rollTarget();
         
     } else {
-        router.push("../game-over")
+        failure(score);
     }
 }
 
@@ -42,7 +46,7 @@ const rollTarget = () => {
     let tempTarget = getRandomNumber(5);
     setTargetColor(gameColors[tempTarget]);
     let tempArray = gameColors;
-    tempArray.splice(tempTarget-1, 1)
+    tempArray.splice(tempTarget, 1)
 
     setTargetText(tempArray[getRandomNumber(4)]);
 }
