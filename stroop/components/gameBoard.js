@@ -54,10 +54,25 @@ const rollTarget = () => {
     tempArray.splice(tempTarget, 1)
 
     setTargetText(tempArray[getRandomNumber(4)]);
+
+    levelOne();
+}
+
+const getRandomColour = () => {
+    const randomColourIndex = Math.floor(Math.random() * gameColors.length);
+    return gameColors[randomColourIndex];
+}
+
+const levelOne = () => {
+   let colour = getRandomColour();
+    if(score >= 6) {
+        <GameButton color={colour}></GameButton>
+    }
 }
 
 return ( 
     <div>
+        <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
         <ColorText textcolor={targetColor} text={targetText}/>
         <p style={{color: targetColor}}>{score}</p>
         {/* <GameButton onClick={handleClick} color="red" text="blue"></GameButton> */}
