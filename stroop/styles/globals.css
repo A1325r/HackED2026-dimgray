@@ -81,6 +81,32 @@ p {
   background-color: white;
 }
 
+.gameButton {
+  font-size: 32px;
+  border: none;
+  margin: 0.5rem;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 0.5rem;
+}
+
+.gameButton:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  transition: 0.5s;
+}
+
+.gameButton:hover {
+  cursor: pointer;
+    padding-right: 24px;
+  padding-left:8px;
+}
+
+.gameButton:hover:after {
+  opacity: 1;
+}
+
 @keyframes arcade-blink {
 
   0%,
