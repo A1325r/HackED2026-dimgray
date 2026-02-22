@@ -42,7 +42,7 @@ function TimerButton() {
       {isTimerActive === true && <div>
         <p>How many colors can you match in
           67 seconds?  <br /> For every match you get
-          wrong, <br /> the timer reduces 6-7 seconds!</p>
+          wrong, <br /> the timer reduces by 6 seconds!</p>
         <Link
           className="startButton flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
           href="/time-trial"
