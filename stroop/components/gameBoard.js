@@ -27,8 +27,8 @@ function failure(number) {
     failGame(number);
 }
 
-function notFail() {
-    contGame();
+function notFail(int) {
+    contGame(int);
 }
 
 const checkColor = (event) => {
@@ -40,7 +40,7 @@ const checkColor = (event) => {
         //setGameColors(props.colors);
         //console.log(tempcolor);
         rollTarget();
-        notFail();
+        notFail(score);
         
     } else {
         failure(score);

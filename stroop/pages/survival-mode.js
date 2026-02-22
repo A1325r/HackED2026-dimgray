@@ -21,7 +21,8 @@ export default function SurvivalMode() {
         start();
     }, []);
 
-    const handlePass = () => {
+    const handlePass = (number) => {
+        setGameScore(number)
         setGameTimer(6);
     }
 
