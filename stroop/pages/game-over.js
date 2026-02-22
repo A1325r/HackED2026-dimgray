@@ -3,6 +3,13 @@ import Link from "next/link";
 
 // should take in the number of points and time to display
 export default function GameOverPage({ displayScore, time, pageUrl }) {
+    const refreshPage = () => {
+        setTimeout(() => {
+            window.location.reload();
+        }, 0);
+    }
+
+
     return (
         <div>
             <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
@@ -10,7 +17,7 @@ export default function GameOverPage({ displayScore, time, pageUrl }) {
             <p style={{ marginBottom: "60px" }}>You got {displayScore} points in {time} seconds!</p>
             <Link
                 className="gameOverButtons"
-                onClick={refresh}
+                onClick={refreshPage}
                 href={pageUrl}
                 style={{ outlineStyle: "solid", outlineColor: "white", padding: 10, marginRight: 40 }}
             >
