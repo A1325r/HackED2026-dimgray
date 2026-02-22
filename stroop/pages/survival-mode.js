@@ -77,7 +77,7 @@ export default function SurvivalMode() {
             <p>{GameTimer}</p>
             <p>{timeLeft}</p>
             {gameState && <GameBoard failGame={handleFail} contGame={handlePass} score={gamesScore}></GameBoard>}
-            {!gameState && <GameOverPage displayScore={gamesScore} time={time}></GameOverPage>}
+            {!gameState && <GameOverPage displayScore={gamesScore} time={time} pageUrl="/survival-mode"></GameOverPage>}
         </div>
     );
 }
