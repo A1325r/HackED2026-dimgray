@@ -11,9 +11,16 @@ export default function GameOverPage({ displayScore, time, pageUrl }) {
             <Link
                 onClick={refresh}
                 href={pageUrl}
-                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10 }}
+                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10, marginRight: 40}}
             >
                 Try Again
+            </Link>
+            <Link
+                href="/"
+                target="_self"
+                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10,}}
+            >
+                Change Mode
             </Link>
         </div>
     );
