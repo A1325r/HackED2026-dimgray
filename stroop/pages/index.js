@@ -13,7 +13,7 @@ export default function Home() {
         <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
         <Navbar />
 
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left home">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">Select Game Mode</h1>
         </div>
 
