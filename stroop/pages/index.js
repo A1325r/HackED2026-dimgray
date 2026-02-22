@@ -49,13 +49,6 @@ function TimerButton() {
           target="_self"
           rel="noopener noreferrer"
         >
-          <Image
-            className="dark:invert"
-            src="/vercel.svg"
-            alt="Vercel logomark"
-            width={16}
-            height={16}
-          />
           Start Time Trial
         </Link>
       </div>}
@@ -83,13 +76,13 @@ function CountdownButton() {
           target="_self"
           rel="noopener noreferrer"
         >
-          <Image
+          {/* <Image
             className="dark:invert"
             src="/vercel.svg"
             alt="Vercel logomark"
             width={16}
             height={16}
-          />
+          /> */}
           Start Survival Mode
         </Link>
       </div>}
