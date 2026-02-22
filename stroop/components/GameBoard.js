@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import GameButton from "./GameButton";
 import ColorText from "./ColorText";
+
 export default function GameBoard({ failGame, contGame, score }) {
     const router = useRouter();
     // const [gameState, setGameState] = useState(gameState);
@@ -18,8 +19,9 @@ export default function GameBoard({ failGame, contGame, score }) {
         'purple',
         'white'
     ];
+    const [buttonColors, setButtonColors] = useState(gameColors); // buttoncolours are where to put randomized colorus
 
-    const [randomNumber] = useState(() => Math.floor(Math.random() * gameColors.length));
+    // const [randomNumber] = useState(() => Math.floor(Math.random() * gameColors.length));
 
 
     const getRandomNumber = (max) => {
@@ -34,14 +36,17 @@ export default function GameBoard({ failGame, contGame, score }) {
         contGame(int);
     }
 
-    const checkColor = (event) => {
-        const buttonText = event.target.innerText;
+    const checkColor = (buttonText) => {
+        // const buttonText = event.target.innerText;
         if (buttonText === targetColor) {
             //setScore(score + 1);
             //let number = (Math.random(5));
             //let tempcolor = gameColors.at(number);
             //setGameColors(props.colors);
             //console.log(tempcolor);
+            if (score + 1 >6 ) {
+                getRandomColour(); // change colouts after score has reached more than 6
+            }
             rollTarget();
             notFail(score + 1);
 
@@ -53,14 +58,16 @@ export default function GameBoard({ failGame, contGame, score }) {
     const rollTarget = () => {
         let tempTarget = getRandomNumber(gameColors.length);
         setTargetColor(gameColors[tempTarget]);
-        let tempArray = gameColors;
+
+        let tempArray = [...gameColors];
         tempArray.splice(tempTarget, 1)
 
-        setTargetText(tempArray[getRandomNumber(4)]);
+        setTargetText(tempArray[getRandomNumber(tempArray.length)]);
     }
 
     const getRandomColour = () => {
-        return gameColors[randomNumber];
+        const newColours = gameColors.map(() => gameColors[getRandomNumber(gameColors.length)]);
+        setButtonColors(newColours);
     }
     
     return (
@@ -73,7 +80,7 @@ export default function GameBoard({ failGame, contGame, score }) {
                 {
                     gameColors.map((item, index) => (
                         <li key={index}>
-                            {score > 6 ? <GameButton click={checkColor} color={getRandomColour()} text={item}></GameButton> : <GameButton click={checkColor} color={item} text={item}></GameButton>}
+                            {score > 6 ? <GameButton click={() => checkColor(item)} color={buttonColors[index]} text={item} /> : <GameButton click={() => checkColor(item)} color={item} text={item} />}
                         </li>
                     ))
                 }
