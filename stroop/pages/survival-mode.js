@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
-import GameBoard from "@/components/gameBoard";
-import { useState, useEffect } from "react";
+import GameBoard from "@/components/GameBoard";
+import GameTimer from "@/components/GameTimer";
+import ProgressTimeBar from "@/components/ProgressTimeBar";
 import GameOverPage from "./game-over";
-import GameTimer from "../components/gameTimer";
-import ProgressTimeBar from "../components/progressTimeBar";
+import { useState, useEffect } from "react";
 
 export default function SurvivalMode() {
     const [gameState, setGameState] = useState(true);

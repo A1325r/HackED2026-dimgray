@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GameButton from "./gamebutton";
 import { useRouter } from "next/router";
+import GameButton from "./GameButton";
 import ColorText from "./ColorText";
 export default function GameBoard({failGame, contGame, score}) {
 const router = useRouter();
