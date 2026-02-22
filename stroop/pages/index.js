@@ -24,7 +24,7 @@ function TimerButton() {
   }
 
   return (
-    <div>
+    <div style={{ marginBottom: "20px" }}>
       <button className="modeButtons" name="timerButton" onClick={handleTimerClick}>Time Trial</button>
       {isTimerActive === true && <div>
         <p>How many colors can you match in
