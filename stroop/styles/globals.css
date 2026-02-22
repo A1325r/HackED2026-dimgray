@@ -83,3 +83,8 @@ p {
     opacity: 0;
   }
 }
+
+.time-up {
+  color: #d32f2f;
+  font-weight: bold;
+}
