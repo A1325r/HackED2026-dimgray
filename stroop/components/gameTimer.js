@@ -12,16 +12,6 @@ const start = () => {
     setIsRunning(true);
 };
 
-  // timer pause
-const pause = () => {
-    setIsRunning(false);
-};
-
-  // resume timer
-const resume = () => {
-    setIsRunning(true);
-};
-
   // reset timer
 const reset = () => {
     setIsRunning(false);
@@ -57,8 +47,6 @@ return {
     progress,
     isRunning,
     start,
-    pause,
-    resume,
     reset,
     secondDur,
     };

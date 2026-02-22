@@ -9,7 +9,7 @@ export default function SurvivalMode() {
     const [gameState, setGameState] = useState(true);
     const [gamesScore, setGameScore] = useState(0);
     const [gameTimer, setGameTimer] = useState(6);
-    const { elapsedTime, progress, secondDur, start } = GameTimer(6); // 67 seconds hahahahahahahah
+    const { elapsedTime, reset, secondDur, start } = GameTimer(6); // 67 seconds hahahahahahahah
     const [timeLeft, setTimeLeft] = useState(6); // Timer value
     const [isActive, setIsActive] = useState(false); // To control the timer
     const [deductedTime, setDeductedTime] = useState(0);
@@ -47,7 +47,9 @@ export default function SurvivalMode() {
     const handlePass = (number) => {
         setGameScore(number)
         setTimeLeft(6);
-        setDeductedTime(prev => prev + 6);
+        reset();
+        start();
+        setDeductedTime(0);
     }
     const adjustedProgress = Math.min(((elapsedTime + deductedTime) / secondDur) * 100, 100);
 
