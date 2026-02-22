@@ -5,7 +5,7 @@ import GameOverPage from "./game-over";
 import GameTimer from "../components/gameTimer";
 import ProgressTimeBar from "../components/progressTimeBar";
 
-export default function SurvivalMode() {
+export default function TimeTrial() {
     const [gameState, setGameState] = useState(true);
     const [gamesScore, setGameScore] = useState(0);
     const [gameTimer, setGameTimer] = useState(67);
@@ -52,7 +52,7 @@ export default function SurvivalMode() {
             {/* shows progerss bar */}
             <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {progress >= 100 && <p className="time-up">Time's Up!</p>}
-            <p>This is survival mode</p>
+            <p>This is time trial</p>
             <p>{GameTimer}</p>
             <p>{timeLeft}</p>
             {gameState && <GameBoard failGame={handleFail} contGame={handlePass} score={gamesScore}></GameBoard>}
