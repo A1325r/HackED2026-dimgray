@@ -4,20 +4,10 @@ import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export default function Home() {
   return (
     <div
-      className={`${geistSans.className} ${geistMono.className} flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black`}
+      className={'flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black'}
     >
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
@@ -49,13 +39,13 @@ function TimerButton() {
 
   return (
     <div>
-      <button class="modeButtons" name="timerButton" onClick={handleTimerClick}>Time Trial</button>
+      <button className="modeButtons" name="timerButton" onClick={handleTimerClick}>Time Trial</button>
       {isTimerActive === true && <div>
         <p>How many colors can you match in
           67 seconds?  <br /> For every match you get
           wrong, <br /> the timer reduces 6-7 seconds!</p>
         <Link
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+          className="startButton flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
           href="/time-trial"
           target="_self"
           rel="noopener noreferrer"
@@ -85,11 +75,11 @@ function CountdownButton() {
 
   return (
     <div>
-      <button class="modeButtons" name="countdownButton" onClick={handleCountdownClick}>Survival Mode</button>
+      <button className="modeButtons" name="countdownButton" onClick={handleCountdownClick}>Survival Mode</button>
       {isCountdownActive === true && <div>
         <p>Play until you get the color wrong! <br /> The questions get progressively harder <br /> and the question timer gets shorter as you play.</p>
         <Link
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+          className="startButton flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
           href="/survival-mode"
           target="_self"
           rel="noopener noreferrer"

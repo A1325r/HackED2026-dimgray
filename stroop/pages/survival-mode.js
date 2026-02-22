@@ -6,18 +6,13 @@ import GameTimer from "../components/gameTimer";
 import ProgressTimeBar from "../components/progressTimeBar";
 
 export default function SurvivalMode() {
-    const [gameState, setGameState] = useState(true);
-    const [gamesScore, setGameScore] = useState(0);
-    const { elapsedTime, progress, secondDur, start } = GameTimer(67); // 67 seconds hahahahahahahah
+const [gameState, setGameState] = useState(true);
+const [gamesScore, setGameScore] = useState(0);
 
-    const handleFail = (score) => {
-        setGameState(false);
-        setGameScore(score);
-    }
-    // starts timer yt
-    useEffect(() => {
-        start();
-    }, []);
+const handleFail = (score) => {
+    setGameState(false);
+    setGameScore(score);
+}
     return (
         <div>
             <Navbar />
@@ -25,7 +20,8 @@ export default function SurvivalMode() {
             <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} duration={secondDur}/>
             {progress >= 100 && <p className="time-up">Time's Up!</p>}
             <p>This is survival mode</p>
-            {gameState && <GameBoard failGame={handleFail}></GameBoard>}
+            <p>{gameTimer}</p>
+            {gameState && <GameBoard failGame={handleFail} contGame={handlePass}></GameBoard>}
             {!gameState && <GameOverPage displayScore={gamesScore}></GameOverPage>}
         </div>
     );
