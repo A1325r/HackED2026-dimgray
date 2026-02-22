@@ -57,6 +57,7 @@ export default function SurvivalMode() {
     return (
         <div>
             <Navbar />
+            <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
             {/* shows progerss bar */}
             <ProgressTimeBar progress={adjustedProgress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {adjustedProgress >= 100 && <p className="time-up">Time&apos;s Up!</p>}

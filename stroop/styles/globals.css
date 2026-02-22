@@ -122,4 +122,5 @@ p {
 .time-up {
   color: #d32f2f;
   font-weight: bold;
+  animation: arcade-blink 2.5s linear infinite;
 }

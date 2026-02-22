@@ -66,6 +66,7 @@ export default function TimeTrial() {
         <div>
             <Navbar />
             {/* shows progerss bar */}
+            <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
             <ProgressTimeBar progress={adjustedProgress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {adjustedProgress >= 100 && <p className="time-up">Time&apos;s Up!</p>}
             <p>This is time trial</p>
