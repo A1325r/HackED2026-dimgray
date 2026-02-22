@@ -7,7 +7,7 @@ export default function GameOverPage({ displayScore, time, pageUrl }) {
         <div>
             <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
             <p style={{ fontSize: "40px" }}>Game Over</p>
-            <p style={{ marginBottom: "50px" }}>You got {displayScore} points in {time} seconds!</p>
+            <p style={{ marginBottom: "60px" }}>You got {displayScore} points in {time} seconds!</p>
             <Link
                 className="gameOverButtons"
                 onClick={refresh}
