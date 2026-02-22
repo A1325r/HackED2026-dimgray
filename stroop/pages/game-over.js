@@ -9,16 +9,18 @@ export default function GameOverPage({ displayScore, time, pageUrl }) {
             <p style={{ fontSize: "40px" }}>Game Over</p>
             <p style={{ marginBottom: "50px" }}>You got {displayScore} points in {time} seconds!</p>
             <Link
+                className="gameOverButtons"
                 onClick={refresh}
                 href={pageUrl}
-                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10, marginRight: 40}}
+                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10, marginRight: 40 }}
             >
                 Try Again
             </Link>
             <Link
+                className="gameOverButtons"
                 href="/"
                 target="_self"
-                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10,}}
+                style={{ outlineStyle: "solid", outlineColor: "white", padding: 10, }}
             >
                 Change Mode
             </Link>
