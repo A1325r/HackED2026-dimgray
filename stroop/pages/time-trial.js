@@ -12,6 +12,7 @@ export default function TimeTrial() {
     const { elapsedTime, progress, secondDur, start } = GameTimer(67); // 67 seconds hahahahahahahah
     const [timeLeft, setTimeLeft] = useState(67); // Timer value
     const [isActive, setIsActive] = useState(false); // To control the timer
+    const [deductedTime, setDeductionTime] = useState(0);
 
     useEffect(() => {
         let timer;
@@ -33,7 +34,8 @@ export default function TimeTrial() {
 
 
     const handleFail = () => {
-        setTimeLeft((prevTime) => prevTime - 6)
+        setTimeLeft((prevTime) => prevTime - 6);
+        setDeductionTime(prev => prev + 6);
     }
 
     // starts timer yt
@@ -42,15 +44,16 @@ export default function TimeTrial() {
     }, []);
 
     const handlePass = (number) => {
-        setGameScore(number)
-    }
+        setGameScore(number);
+    };
 
+    const adjustedProgress = Math.min(((elapsedTime + deductedTime) / secondDur) * 100, 100);
 
     return (
         <div>
             <Navbar />
             {/* shows progerss bar */}
-            <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} secondDur={secondDur} />
+            <ProgressTimeBar progress={adjustedProgress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {progress >= 100 && <p className="time-up">Time's Up!</p>}
             <p>This is time trial</p>
             <p>{GameTimer}</p>

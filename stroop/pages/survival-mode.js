@@ -9,9 +9,10 @@ export default function SurvivalMode() {
     const [gameState, setGameState] = useState(true);
     const [gamesScore, setGameScore] = useState(0);
     const [gameTimer, setGameTimer] = useState(6);
-    const { elapsedTime, progress, secondDur, start } = GameTimer(67); // 67 seconds hahahahahahahah
+    const { elapsedTime, progress, secondDur, start } = GameTimer(6); // 67 seconds hahahahahahahah
     const [timeLeft, setTimeLeft] = useState(6); // Timer value
     const [isActive, setIsActive] = useState(false); // To control the timer
+    const [deductedTime, setDeductedTime] = useState(0);
 
     useEffect(() => {
         let timer;
@@ -35,6 +36,7 @@ export default function SurvivalMode() {
         setGameState(false);
         setGameScore(score);
         setTimeLeft(0);
+        setDeductedTime(prev => prev + 6);
     }
 
     // starts timer yt
@@ -45,14 +47,16 @@ export default function SurvivalMode() {
     const handlePass = (number) => {
         setGameScore(number)
         setTimeLeft(6);
+        setDeductedTime(prev => prev + 6);
     }
+    const adjustedProgress = Math.min(((elapsedTime + deductedTime) / secondDur) * 100, 100);
 
     
     return (
         <div>
             <Navbar />
             {/* shows progerss bar */}
-            <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} secondDur={secondDur} />
+            <ProgressTimeBar progress={adjustedProgress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {progress >= 100 && <p className="time-up">Time's Up!</p>}
             <p>This is survival mode</p>
             <p>{GameTimer}</p>
