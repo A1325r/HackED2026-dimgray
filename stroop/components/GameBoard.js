@@ -51,7 +51,7 @@ export default function GameBoard({ failGame, contGame, score }) {
     }
 
     const rollTarget = () => {
-        let tempTarget = getRandomNumber(5);
+        let tempTarget = getRandomNumber(gameColors.length);
         setTargetColor(gameColors[tempTarget]);
         let tempArray = gameColors;
         tempArray.splice(tempTarget, 1)
