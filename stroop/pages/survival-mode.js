@@ -74,7 +74,6 @@ export default function SurvivalMode() {
             {/* shows progerss bar */}
             <ProgressTimeBar progress={adjustedProgress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {adjustedProgress >= 100 && <p className="time-up">Time&apos;s Up!</p>}
-            <p>This is survival mode</p>
             <p>{GameTimer}</p>
             <p>{timeLeft}</p>
             {gameState && <GameBoard failGame={handleFail} contGame={handlePass} score={gamesScore}></GameBoard>}
