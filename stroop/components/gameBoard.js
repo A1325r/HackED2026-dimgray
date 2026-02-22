@@ -2,13 +2,13 @@ import { useState } from "react";
 import GameButton from "./gamebutton";
 import { useRouter } from "next/router";
 import ColorText from "./ColorText";
-export default function GameBoard({failGame, contGame}) {
+export default function GameBoard({failGame, contGame, score}) {
 const router = useRouter();
 // const [gameState, setGameState] = useState(gameState);
 //const [gameColors, setGameColors] = useState([]);
 const [targetColor, setTargetColor] = useState('red');
 const [targetText, setTargetText] = useState('blue');
-const [score, setScore] = useState(0);
+//const [score, setScore] = useState(0);
 
 const gameColors = [
     'red',
@@ -34,13 +34,13 @@ function notFail(int) {
 const checkColor = (event) => {
     const buttonText = event.target.innerText;
     if(buttonText === targetColor) {
-        setScore(score + 1);
+        //setScore(score + 1);
         //let number = (Math.random(5));
         //let tempcolor = gameColors.at(number);
         //setGameColors(props.colors);
         //console.log(tempcolor);
         rollTarget();
-        notFail(score);
+        notFail(score + 1);
         
     } else {
         failure(score);

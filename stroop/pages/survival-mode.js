@@ -44,22 +44,10 @@ export default function SurvivalMode() {
 
     const handlePass = (number) => {
         setGameScore(number)
-        // setGameTimer(6);
         setTimeLeft(6);
     }
 
-    // const timerId = setInterval(function() {
-    //     setGameTimer(gameTimer - 1)
-    //     if(gameTimer === 0) {
-    //         setGameState(false);
-    //         setGameTimer(0)
-    //     }
-    // }, 1000);
-
-    // To stop the timer after, say, 5 seconds:
-    // setTimeout(function() {
-    //     clearInterval(timerId);
-    // }, 6000);
+    
     return (
         <div>
             <Navbar />
@@ -69,7 +57,7 @@ export default function SurvivalMode() {
             <p>This is survival mode</p>
             <p>{GameTimer}</p>
             <p>{timeLeft}</p>
-            {gameState && <GameBoard failGame={handleFail} contGame={handlePass}></GameBoard>}
+            {gameState && <GameBoard failGame={handleFail} contGame={handlePass} score={gamesScore}></GameBoard>}
             {!gameState && <GameOverPage displayScore={gamesScore}></GameOverPage>}
         </div>
     );
