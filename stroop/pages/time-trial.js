@@ -24,6 +24,7 @@ export default function SurvivalMode() {
 
         } else if (timeLeft <= 0) {
             setGameState(false);
+            setTimeLeft(0);
         }
 
         return () => clearTimeout(timer); // Cleanup the timer
