@@ -41,7 +41,7 @@ export default function SurvivalMode() {
         <div>
             <Navbar />
             {/* shows progerss bar */}
-            <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} duration={secondDur}/>
+            <ProgressTimeBar progress={progress} elapsedTime={elapsedTime} secondDur={secondDur}/>
             {progress >= 100 && <p className="time-up">Time's Up!</p>}
             <p>This is survival mode</p>
             <p>{GameTimer}</p>
