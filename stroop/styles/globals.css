@@ -73,7 +73,7 @@ p {
   color: white;
   background-color: black;
   border: 1px solid white;
-  padding: 3px 4px;
+  padding: 4px 6px;
 }
 
 .startButton:before {
@@ -81,7 +81,7 @@ p {
   position: absolute;
   opacity: 0;
   transition: 0.5s;
-  left: 250;
+  transform: translate(-200%);
 }
 
 .startButton:hover {

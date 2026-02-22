@@ -30,7 +30,7 @@ function TimerButton() {
         <p>How many colors can you match in
           67 seconds?  <br /> For every match you get
           wrong, <br /> the timer reduces by 6 seconds!</p>
-        <Link href="/time-trial" target="_self">Start</Link>
+        <Link className="startButton" href="/time-trial" target="_self">Start</Link>
       </div>}
     </div>
   );
@@ -50,7 +50,7 @@ function CountdownButton() {
       <button className="modeButtons" name="countdownButton" onClick={handleCountdownClick}>Survival Mode</button>
       {isCountdownActive === true && <div>
         <p>Play until you get the color wrong! <br /> The questions get progressively harder <br /> and the question timer gets shorter as you play.</p>
-        <Link href="/survival-mode" target="_self">Start</Link>
+        <Link className="startButton" href="/survival-mode" target="_self">Start</Link>
       </div>}
     </div>
   );
