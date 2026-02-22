@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
-import Image from "next/image";
 import { useState } from "react";
 
 // should take in the number of points and time to display
@@ -23,13 +22,6 @@ export default function GameOverPage({displayScore, time}) {
                         target="_self"
                         rel="noopener noreferrer"
                     >
-                        <Image
-                            className="dark:invert"
-                            src="/vercel.svg"
-                            alt="Vercel logomark"
-                            width={16}
-                            height={16}
-                        />
                         Try Again
                     </Link>
                 </div>
