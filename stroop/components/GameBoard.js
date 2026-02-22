@@ -66,8 +66,8 @@ export default function GameBoard({ failGame, contGame, score }) {
     return (
         <div>
             <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
+            <p style={{ fontSize: "18px" }}>score: {score}</p>
             <ColorText textcolor={targetColor} text={targetText} />
-            <p style={{ color: targetColor }}>{score}</p>
             {/* <GameButton onClick={handleClick} color="red" text="blue"></GameButton> */}
             <ul>
                 {
