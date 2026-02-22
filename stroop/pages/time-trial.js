@@ -70,7 +70,7 @@ export default function TimeTrial() {
             <ProgressTimeBar progress={adjustedProgress} elapsedTime={elapsedTime} secondDur={secondDur} />
             {adjustedProgress >= 100 && <p className="time-up">Time&apos;s Up!</p>}
             <p>{GameTimer}</p>
-            <p>{timeLeft}</p>
+            <p>{timeLeft == 0 ? null : timeLeft}</p>
             {gameState && <GameBoard failGame={handleFail} contGame={handlePass} score={gamesScore}></GameBoard>}
             {!gameState && <GameOverPage displayScore={gamesScore} time={time} pageUrl="/time-trial"></GameOverPage>}
         </div>
