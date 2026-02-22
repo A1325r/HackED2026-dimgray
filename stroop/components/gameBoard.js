@@ -57,22 +57,11 @@ export default function GameBoard({ failGame, contGame, score }) {
         tempArray.splice(tempTarget, 1)
 
         setTargetText(tempArray[getRandomNumber(4)]);
-
-        levelOne();
     }
 
     const getRandomColour = () => {
-        const randomColourIndex = Math.floor(Math.random() * gameColors.length);
-        return gameColors[randomColourIndex];
+        return gameColors[randomNumber];
     }
-
-    const levelOne = () => {
-        let colour = getRandomColour();
-        if (score >= 6) {
-            <GameButton color={colour}></GameButton>
-        }
-    }
-
     
     return (
         <div>
@@ -84,7 +73,7 @@ export default function GameBoard({ failGame, contGame, score }) {
                 {
                     gameColors.map((item, index) => (
                         <li key={index}>
-                            {score > 6 ? <GameButton click={checkColor} color={randomColourPicker()} text={item}></GameButton> : <GameButton click={checkColor} color={item} text={item}></GameButton>}
+                            {score > 6 ? <GameButton click={checkColor} color={getRandomColour()} text={item}></GameButton> : <GameButton click={checkColor} color={item} text={item}></GameButton>}
                         </li>
                     ))
                 }
