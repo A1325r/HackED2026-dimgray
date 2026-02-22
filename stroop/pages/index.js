@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <link href="https://fonts.cdnfonts.com/css/joystix" rel="stylesheet"></link>
       <Navbar />
-      <h1>Select Game Mode</h1>
+      <h1 className="home">Select Game Mode</h1>
       <TimerButton />
       <CountdownButton />
     </div>
