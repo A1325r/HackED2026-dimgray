@@ -13,6 +13,18 @@ export default function TimeTrial() {
     const [timeLeft, setTimeLeft] = useState(67); // Timer value
     const [isActive, setIsActive] = useState(false); // To control the timer
     const [deductedTime, setDeductionTime] = useState(0);
+    const [time, setTime] = useState(0);
+    // state to check whether the rounds still going or not
+    const [isRunning, setIsRunning] = useState(true);
+
+    useEffect(() => {
+        let intervalId;
+        if (isRunning) {
+            // setting time from 0 to 1 every 10 milisecond using javascript setInterval method
+            intervalId = setInterval(() => setTime(time + 1), 1000);
+        }
+        return () => clearInterval(intervalId);
+    }, [isRunning, time]);
 
     useEffect(() => {
         let timer;
@@ -26,6 +38,7 @@ export default function TimeTrial() {
         } else if (timeLeft <= 0) {
             setGameState(false);
             setTimeLeft(0);
+            setIsRunning(false);
         }
 
         return () => clearTimeout(timer); // Cleanup the timer
@@ -59,7 +72,7 @@ export default function TimeTrial() {
             <p>{GameTimer}</p>
             <p>{timeLeft}</p>
             {gameState && <GameBoard failGame={handleFail} contGame={handlePass} score={gamesScore}></GameBoard>}
-            {!gameState && <GameOverPage displayScore={gamesScore}></GameOverPage>}
+            {!gameState && <GameOverPage displayScore={gamesScore} time={time}></GameOverPage>}
         </div>
     );
 }
